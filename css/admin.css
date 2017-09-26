@@ -8,6 +8,10 @@
           flex-direction: column;
 }
 
+.vertical.menu.accordion-menu > li > ul > li i.fa {
+    margin-right: 0.5em;
+}
+
 .app-dashboard-body {
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
