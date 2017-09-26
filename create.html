@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/icons/font-awesome.min.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/foundation-datepicker.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></link>
+  </head>
+  <body>
+
+    <div class="app-dashboard shrink-medium">
+
+      <!-- Top bar -->
+
+      <div class="row expanded app-dashboard-top-nav-bar">
+
+        <div class="columns medium-2 div-logo">
+          <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
+          <a class="app-dashboard-logo">Admin</a>
+        </div>
+
+        <div class="columns show-for-medium div-search">
+          <div class="app-dashboard-search-bar-container">
+            <input class="app-dashboard-search" type="search" placeholder="Search">
+            <i class="app-dashboard-search-icon fa fa-search"></i>
+          </div>
+        </div>
+
+        <div class="columns shrink app-dashboard-top-bar-actions div-logout">
+          <button href="#" class="button hollow">Logout</button>
+          <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
+        </div>
+
+      </div>
+
+      <!-- Div principal -->
+
+      <div class="app-dashboard-body off-canvas-wrapper">
+
+        <!-- Menu -->
+
+        <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>
+
+          <div class="app-dashboard-sidebar-title-area">
+            <div class="app-dashboard-close-sidebar">
+              <h3 class="app-dashboard-sidebar-block-title">Menu</h3>
+
+              <!-- Botão de fechar -->
+
+              <button id="close-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-sidebar-close-button show-for-medium" aria-label="Close menu" type="button">
+                <span aria-hidden="true"><a href="#"><i class="large fa fa-angle-double-left"></i></a></span>
+              </button>
+
+            </div>
+            <div class="app-dashboard-open-sidebar">
+              <button id="open-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-open-sidebar-button show-for-medium" aria-label="open menu" type="button">
+                <span aria-hidden="true"><a href="#"><i class="large fa fa-angle-double-right"></i></a></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="app-dashboard-sidebar-inner">
+            <ul class="menu vertical">
+              <li><a href="#" class="is-active">
+                <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Buildings</span>
+              </a></li>
+              <li><a>
+                <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text">Time</span>
+              </a></li>
+              <li><a>
+                <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Industry</span>
+              </a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Conteúdo -->
+
+        <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
+
+          <h2>Genérico <small>Adicionar</small></h2>
+
+          <i>* Você pode adicionar por aqui</i> 
+          <hr>
+
+          <div class="small-12 cell">
+
+            <div class="inner-fieldset">
+              <form method="post" action="<?= base_url()?>atividades-adicionar">
+
+                <div class="grid-x grid-margin-x">
+                  <div class="small-6 cell">
+                    <label>Título (pt):
+                      <input id="titulo" name="titulo" type="text" placeholder="Título da notícia">
+                      <span class="form-error">
+                        A data é obrigatória
+                      </span>
+                    </label>
+                  </div>
+                  <div class="small-6 cell">
+                    <label>Título (en):
+                      <input id="titulo" name="titulo" type="text" placeholder="News Title">
+                      <span class="form-error">
+                        A data é obrigatória
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="grid-x grid-margin-x">
+                  <div class="small-4 cell">
+                      <label>Categoria:
+                        <select name="membros[]" id="select"a>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+                            <option value="">Categoria</option>
+
+                        </select>
+                    </label>
+                  </div>
+                  <div class="small-4 cell">
+                    <label>Data:
+                      <input id="dt_entrega" name="dt_entrega" type="text" placeholder="--/--/----">
+                      <span class="form-error">
+                        A data é obrigatória
+                      </span>
+                    </label>
+                  </div>
+                  <div class="small-4 cell">
+                    <label>Fonte:
+                      <input id="titulo" name="titulo" type="text" placeholder="https://fonte.com.br">
+                       <p class="help-text" id="exampleHelpText2">Nome ou link externo</p>
+                      <span class="form-error">
+                        A data é obrigatória
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="grid-x grid-margin-x">
+                  <fieldset class="large-4 cell">
+                    <label>Tipo:</label>
+                    <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Texto</label>
+                    <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Arquivo</label>
+                  </fieldset>
+                  <div class="small-5 cell end">
+                    <label>Imagem destaque:
+                      <input id="imagem" name="titulo" type="file" placeholder="Título da notícia">
+                      <span class="form-error">
+                        A data é obrigatória
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="grid-x grid-margin-x">
+                  <div class="small-6 cell">
+                    <label>Descrição (pt):
+                      <textarea id="descricao_pt" name="ds_atividade" type="text"></textarea>
+                    </label>
+                  </div>
+                  <div class="small-6 cell">
+                    <label>Descrição (en):
+                      <textarea id="descricao_en" name="ds_atividade" type="text"></textarea>
+                    </label>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="grid-x">
+                  <fieldset class="large-12 cell">
+                    <button class="button float-right" type="submit" value="Submit">Salvar</button>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="js/foundation-datepicker.js"></script>
+    <script src="js/foundation-datepicker.pt.js"></script>
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script src="js/admin.js"></script>
+
+    <script>
+
+      $(document).foundation();
+
+      /* Date Picker */
+
+      $(function(){
+        $('#dt_entrega').fdatepicker({
+          initialDate: '01-01-2016',
+          format: 'dd/mm/yyyy ',
+          disableDblClickSelection: true,
+          leftArrow:'<<',
+          rightArrow:'>>',
+          closeIcon:'X',
+          closeButton: false,
+          language: 'pt',
+
+        });
+      });
+
+      tinymce.init({
+        selector: '#descricao_pt',
+        theme: "modern",
+        plugins: [
+          "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "save table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker codesample"
+        ],
+        external_plugins: {
+          //"moxiemanager": "/moxiemanager-php/plugin.js"
+        },
+        content_css: "css/development.css",
+        add_unload_trigger: false,
+        autosave_ask_before_unload: false,
+
+        toolbar1: "save newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+        toolbar2: "cut copy paste pastetext | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media help code | insertdatetime preview | forecolor backcolor",
+        toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft | insertfile insertimage codesample",
+        menubar: false,
+        toolbar_items_size: 'small',
+
+        style_formats: [
+          {title: 'Bold text', inline: 'b'},
+          {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+          {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+          {title: 'Example 1', inline: 'span', classes: 'example1'},
+          {title: 'Example 2', inline: 'span', classes: 'example2'},
+          {title: 'Table styles'},
+          {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+        ],
+
+        templates: [
+          {title: 'My template 1', description: 'Some fancy template 1', content: 'My html'},
+          {title: 'My template 2', description: 'Some fancy template 2', url: 'development.html'}
+        ],
+
+            spellchecker_callback: function(method, data, success) {
+          if (method == "spellcheck") {
+            var words = data.match(this.getWordCharPattern());
+            var suggestions = {};
+
+            for (var i = 0; i < words.length; i++) {
+              suggestions[words[i]] = ["First", "second"];
+            }
+
+            success({words: suggestions, dictionary: true});
+          }
+
+          if (method == "addToDictionary") {
+            success();
+          }
+        }
+      });
+
+      tinymce.init({
+        selector: '#descricao_en',
+        theme: "modern",
+        plugins: [
+          "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "save table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker codesample"
+        ],
+        external_plugins: {
+          //"moxiemanager": "/moxiemanager-php/plugin.js"
+        },
+        content_css: "css/development.css",
+        add_unload_trigger: false,
+        autosave_ask_before_unload: false,
+
+        toolbar1: "save newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+        toolbar2: "cut copy paste pastetext | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media help code | insertdatetime preview | forecolor backcolor",
+        toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft | insertfile insertimage codesample",
+        menubar: false,
+        toolbar_items_size: 'small',
+
+        style_formats: [
+          {title: 'Bold text', inline: 'b'},
+          {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+          {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+          {title: 'Example 1', inline: 'span', classes: 'example1'},
+          {title: 'Example 2', inline: 'span', classes: 'example2'},
+          {title: 'Table styles'},
+          {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+        ],
+
+        templates: [
+          {title: 'My template 1', description: 'Some fancy template 1', content: 'My html'},
+          {title: 'My template 2', description: 'Some fancy template 2', url: 'development.html'}
+        ],
+
+            spellchecker_callback: function(method, data, success) {
+          if (method == "spellcheck") {
+            var words = data.match(this.getWordCharPattern());
+            var suggestions = {};
+
+            for (var i = 0; i < words.length; i++) {
+              suggestions[words[i]] = ["First", "second"];
+            }
+
+            success({words: suggestions, dictionary: true});
+          }
+
+          if (method == "addToDictionary") {
+            success();
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+</html>
