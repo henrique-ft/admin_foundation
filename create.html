@@ -65,14 +65,14 @@
           </div>
 
           <div class="app-dashboard-sidebar-inner">
-            <ul class="vertical menu accordion-menu" data-accordion-menu>
+            <ul id="menu-principal" class="vertical menu accordion-menu" data-accordion-menu>
               <li>
                 <a href="#" class="is-active"> <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Buildings</span>
               </a>
               </li>
               <li>
                 <a href="#"><i class="large fa fa-car"></i><span class="app-dashboard-sidebar-text">Cars </span></a>
-                <ul class="menu vertical nested">
+                <ul id="submenu-cars" class="menu vertical nested">
                   <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Adicionar</span></a></li>
                   <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Gerenciar</span></a></li>
                 </ul>
@@ -85,7 +85,6 @@
               </li>
             </ul>
           </div>
-
         </div>
 
         <!-- Conteúdo -->
@@ -96,6 +95,27 @@
 
           <i>* Você pode adicionar por aqui</i> 
           <hr>
+
+          <div data-closable class="callout alert-callout-border success radius">
+            <strong>Sucesso!</strong> - Deu certo.
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div data-closable class="callout alert-callout-border alert radius">
+            <strong>Erro!</strong> - Problemas internos.
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div data-closable class="callout alert-callout-border secondary radius">
+            <strong>Oops!</strong> - Você errou um campo.
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
           <div class="small-12 cell">
 
