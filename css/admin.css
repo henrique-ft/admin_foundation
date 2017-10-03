@@ -267,7 +267,7 @@
 
 .a-foundation-style {
     line-height: inherit;
-    color: #07324e;
+    color: rgba(7, 50, 78, 0.92);
     text-decoration: none;
     cursor: pointer;
 }
@@ -278,7 +278,7 @@
 }
 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
-    border-color: #07324e transparent transparent;
+    border-color: rgba(7, 50, 78, 0.92) transparent transparent;
 }
 
 a:hover, a:focus {
@@ -286,7 +286,7 @@ a:hover, a:focus {
 }
 
 a {
-  color:#07324e;
+  color:rgba(7, 50, 78, 0.92);
 }
 
 a.app-dashboard-logo:hover, a.app-dashboard-logo:focus {
@@ -299,11 +299,11 @@ td > .switch {
 }
 
 input:checked ~ .switch-paddle {
-    background: #07324e;
+    background: rgba(7, 50, 78, 0.92);
 }
 
 .button {
-  background-color: #07324e;
+  background-color: rgba(7, 50, 78, 0.92);
 }
 
 .button:hover, .button:focus {
