@@ -4,8 +4,7 @@ $('[data-app-dashboard-toggle-shrink]').on('click', function(e) {
   $(this).parents('.app-dashboard').toggleClass('shrink-medium').toggleClass('shrink-large');
 });
 
-// Mensagem de confirmação de exclusão
-
+// Exclusion cofirmation
 $('.need-confirmation-delete').click(function(e){
   
   if (!confirm("Deseja realmente excluir?")) {
