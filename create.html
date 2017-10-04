@@ -225,11 +225,10 @@
 
       $(document).foundation();
     
-      // Abre o submenu
+      // Open down a submenu
       $('#menu-principal').foundation('down', $('#submenu-cars'));
 
-      /* Date Picker */
-
+      // Datepicker
       $(function(){
         $('#dt_entrega').fdatepicker({
           initialDate: '01-01-2016',
@@ -244,6 +243,7 @@
         });
       });
 
+      // Text editor
       tinymce.init({
         selector: '#descricao_pt',
         theme: "modern",
@@ -298,6 +298,7 @@
         }
       });
 
+      // Text editor
       tinymce.init({
         selector: '#descricao_en',
         theme: "modern",
