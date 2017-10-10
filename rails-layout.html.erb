@@ -1,3 +1,21 @@
+<!--
+put this in your gemfile:
+
+# Font awesome
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
+run:
+
+$ bundle install
+
+put in your application.css
+
+*= require font-awesome
+
+download assets and paste in public rails folder
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +25,11 @@
 
     <%= csrf_meta_tags %>
     <%= yield :title %>
-    
+
+    <link rel="stylesheet" href="/assets/admin/css/foundation.css">
+    <link rel="stylesheet" href="/assets/admin/css/foundation-datepicker.css">
+    <link rel="stylesheet" href="/assets/admin/css/admin.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></link>
     <%= stylesheet_link_tag "application" %>
     <%= yield :styles %>
     
@@ -104,7 +126,16 @@
     </div>
   
     <% # SCRIPTS %>
-  
+    
+    <script src="/assets/admin/js/vendor/jquery.js"></script>
+    <script src="/assets/admin/js/vendor/what-input.js"></script>
+    <script src="/assets/admin/js/vendor/foundation.js"></script>
+    <script src="/assets/admin/js/admin.js"></script>
+    <script src="/assets/admin/js/foundation-datepicker.js"></script>
+    <script src="/assets/admin/js/foundation-datepicker.pt.js"></script>
+    <script src="/assets/admin/js/tinymce/tinymce.min.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+ 
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= yield :scripts %>
     
