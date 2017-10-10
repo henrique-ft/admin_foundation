@@ -598,3 +598,19 @@ input:checked ~ .switch-paddle {
             justify-content: center;
   }
   .app-dashboard.shrink-large .menu li::after {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .app-dashboard.shrink-large .menu li a {
+    padding: 0.75rem;
+  }
+  .app-dashboard.shrink-large .menu li a svg {
+    margin: 0;
+  }
+  .app-dashboard.shrink-large .menu li a span {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
