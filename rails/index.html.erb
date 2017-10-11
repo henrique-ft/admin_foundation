@@ -1,0 +1,90 @@
+<% content_for :title do %>
+<title>Clientes - Gerenciar</title>
+<% end %>
+
+<% content_for :header do %>
+<h1>Clientes <small>Gerenciar</small></h1>
+<% end %>
+
+<div class="small-12 columns col-table">
+  <table id="myTable" class="stack hover">
+    <thead>
+      <tr>
+        <th width="100">Nome</th>
+        <th width="100">Site</th>
+        <th width="40"></th>
+        <th width="40"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Item da lista</td>
+        <td>https://www.exemplo.com.br</td>
+        <td><a href="<?= base_url(); ?>atividades-editar/<?= $atividade['id_atividade'] ?>"><i class="fi-pencil"></i><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+        <td><a href="<?= base_url(); ?>Atividades/Excluir/<?= $atividade['id_atividade'] ?>"><i class="fi-trash"></i><i class="fa fa-trash" aria-hidden="true"></i> Excluir </a></td>
+      </tr>
+      <tr>
+        <td>Item da lista</td>
+        <td>https://www.exemplo.com.br</td>
+        <td><a href="<?= base_url(); ?>atividades-editar/<?= $atividade['id_atividade'] ?>"><i class="fi-pencil"></i><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+        <td><a href="<?= base_url(); ?>Atividades/Excluir/<?= $atividade['id_atividade'] ?>"><i class="fi-trash"></i> <i class="fa fa-trash" aria-hidden="true"></i> Excluir </a></td>
+      </tr>
+      <tr>
+        <td>Item da lista</td>
+        <td>https://www.exemplo.com.br</td>
+        <td><a href="<?= base_url(); ?>atividades-editar/<?= $atividade['id_atividade'] ?>"><i class="fi-pencil"></i><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+        <td><a href="<?= base_url(); ?>Atividades/Excluir/<?= $atividade['id_atividade'] ?>"><i class="fi-trash"></i> <i class="fa fa-trash" aria-hidden="true"></i> Excluir </a></td>
+      </tr>
+      <tr>
+        <td>Item da lista</td>
+        <td>https://www.exemplo.com.br</td>
+        <td><a href="<?= base_url(); ?>atividades-editar/<?= $atividade['id_atividade'] ?>"><i class="fi-pencil"></i><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+        <td><a href="<?= base_url(); ?>Atividades/Excluir/<?= $atividade['id_atividade'] ?>"><i class="fi-trash"></i> <i class="fa fa-trash" aria-hidden="true"></i> Excluir </a></td>
+      </tr>
+      <tr>
+        <td>Item da lista</td>
+        <td>https://www.exemplo.com.br</td>
+        <td><a href="<?= base_url(); ?>atividades-editar/<?= $atividade['id_atividade'] ?>"><i class="fi-pencil"></i><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a></td>
+        <td><a href="<?= base_url(); ?>Atividades/Excluir/<?= $atividade['id_atividade'] ?>"><i class="fi-trash"></i> <i class="fa fa-trash" aria-hidden="true"></i> Excluir </a></td>
+      </tr>
+    </tbody>
+   </table>
+</div>
+
+<% content_for :scripts do %>
+<script>
+
+  $(document).foundation();
+
+  // Abre o submenu
+  $('#menu-principal').foundation('down', $('#submenu-cars'));
+
+  $(document).ready(function(){
+      $('#myTable').DataTable( {
+                                language: {
+                                    processing:     "Processando...",
+                                    search:         "Pesquisar:",
+                                    lengthMenu:    "Mostrar: _MENU_ Resultados por página",
+                                    info:           "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                                    infoEmpty:      "Mostrando 0 até 0 de 0 registros",
+                                    infoFiltered:   "(Filtrados de _MAX_ registros)",
+                                    infoPostFix:    "",
+                                    loadingRecords: "Carregando...",
+                                    zeroRecords:    "Nenhum navio encontrada!",
+                                    emptyTable:     "Aucune donnée disponible dans le tableau",
+                                    paginate: {
+                                        first:      "Próximo",
+                                        previous:   "Anterior",
+                                        next:       "Primeiro",
+                                        last:       "último"
+                                    },
+                                    aria: {
+                                        sortAscending: ": Ordenar colunas de forma ascendente",
+                                        sortDescending: ": Ordenar colunas de forma descendente"
+                                    }
+                                }
+                            } );
+  });
+
+</script>
+<% end %>

@@ -26,11 +26,7 @@ download assets and paste in public rails folder
     <%= csrf_meta_tags %>
     <%= yield :title %>
 
-    <link rel="stylesheet" href="/assets/admin/css/foundation.css">
-    <link rel="stylesheet" href="/assets/admin/css/foundation-datepicker.css">
-    <link rel="stylesheet" href="/assets/admin/css/admin.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></link>
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "admin" %>
     <%= yield :styles %>
     
   </head>
@@ -127,16 +123,8 @@ download assets and paste in public rails folder
   
     <% # SCRIPTS %>
     
-    <script src="/assets/admin/js/vendor/jquery.js"></script>
-    <script src="/assets/admin/js/vendor/what-input.js"></script>
-    <script src="/assets/admin/js/vendor/foundation.js"></script>
-    <script src="/assets/admin/js/admin.js"></script>
-    <script src="/assets/admin/js/foundation-datepicker.js"></script>
-    <script src="/assets/admin/js/foundation-datepicker.pt.js"></script>
-    <script src="/assets/admin/js/tinymce/tinymce.min.js"></script> 
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
- 
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
+    <script src="/plugins/tinymce/tinymce.min.js"></script> 
     <%= yield :scripts %>
     
   </body>

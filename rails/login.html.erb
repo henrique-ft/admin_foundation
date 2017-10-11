@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Login</title>
 
-    <link rel="stylesheet" href="css/icons/font-awesome.min.css">
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <%= stylesheet_link_tag "admin" %>
     
     <style>
         
@@ -43,7 +41,7 @@
             </form>
         </div>
     </div>
-    
+
     <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
     <script src="/plugins/tinymce/tinymce.min.js"></script> 
     <%= yield :scripts %>
