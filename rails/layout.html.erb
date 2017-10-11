@@ -28,6 +28,8 @@ download assets and paste in public rails folder
 
     <%= stylesheet_link_tag "admin" %>
     <%= yield :styles %>
+
+    <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
     
   </head>
 
@@ -122,8 +124,7 @@ download assets and paste in public rails folder
     </div>
   
     <% # SCRIPTS %>
-    
-    <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
+
     <script src="/plugins/tinymce/tinymce.min.js"></script> 
     <%= yield :scripts %>
     
