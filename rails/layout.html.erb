@@ -12,7 +12,7 @@ put in your application.css
 
 *= require font-awesome
 
-download assets and paste in public rails folder
+download assets in public folders
 
 -->
 
@@ -22,15 +22,22 @@ download assets and paste in public rails folder
     
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  
+    <% # TITLE AND META TAGS %>
+  
     <%= csrf_meta_tags %>
     <%= yield :title %>
 
+    <% # STYLES %>
+
     <%= stylesheet_link_tag "admin" %>
     <%= yield :styles %>
+    
+    <% # HEAD SCRIPTS %>
 
     <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
-    
+    <%= yield :head_scripts %>
+
   </head>
 
   <body>
@@ -43,7 +50,7 @@ download assets and paste in public rails folder
 
         <div class="columns medium-2 div-logo">
           <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
-          <a href="/admin" class="app-dashboard-logo"><i class="fa fa-cogs" aria-hidden="true"></i> Client</a>
+          <a href="/admin" class="app-dashboard-logo"><i class="fa fa-cogs" aria-hidden="true"></i> Kbr - financeiro</a>
         </div>
 
         <div class="columns show-for-medium div-search">
@@ -89,21 +96,18 @@ download assets and paste in public rails folder
           <div class="app-dashboard-sidebar-inner">
             <ul id="menu-principal" class="vertical menu accordion-menu" data-accordion-menu>
               <li>
-                <a href="#" class="is-active"> <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Buildings</span>
-              </a>
-              </li>
-              <li>
-                <a href="#"><i class="large fa fa-car"></i><span class="app-dashboard-sidebar-text">Cars </span></a>
+                <a href="#"><i class="large fa fa-users"></i><span class="app-dashboard-sidebar-text">Clientes </span></a>
                 <ul id="submenu-cars" class="menu vertical nested">
-                  <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Adicionar</span></a></li>
-                  <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Gerenciar</span></a></li>
+                  <li><a href="/clientes/adicionar"><i class="fa fa-plus" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Adicionar</span></a></li>
+                  <li><a href="/clientes"><i class="fa fa-cog" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Gerenciar</span></a></li>
                 </ul>
               </li>
               <li>
-                <a> <i class="large fa fa-hourglass"></i><span class="app-dashboard-sidebar-text">Time</span> </a>
-              </li>
-              <li>
-                <a> <i class="large fa fa-industry"></i><span class="app-dashboard-sidebar-text">Industry</span> </a>
+                <a href="#"><i class="large fa fa-sticky-note-o" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Boletos </span></a>
+                <ul id="submenu-cars" class="menu vertical nested">
+                  <li><a href="/boletos/adicionar"><i class="fa fa-fire" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Gerar</span></a></li>
+                  <li><a href="/boletos"><i class="fa fa-cog" aria-hidden="true"></i><span class="app-dashboard-sidebar-text">Gerenciar</span></a></li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -122,11 +126,11 @@ download assets and paste in public rails folder
       </div>
   
     </div>
-  
-    <% # SCRIPTS %>
-
-    <script src="/plugins/tinymce/tinymce.min.js"></script> 
-    <%= yield :scripts %>
     
+    <% # BODY SCRIPTS %>
+  
+    <script src="/plugins/tinymce/tinymce.min.js"></script> 
+    <%= yield :body_scripts %>
+
   </body>
 </html>
